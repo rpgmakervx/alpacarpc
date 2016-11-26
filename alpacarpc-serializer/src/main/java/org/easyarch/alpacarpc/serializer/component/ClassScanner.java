@@ -69,7 +69,7 @@ public class ClassScanner {
     }
 
     public void scanByPackage(){
-        transportClasses.addAll(new ClassScanner().scanByJar(""));
+        transportClasses.addAll(scanByJar(""));
     }
 
 
