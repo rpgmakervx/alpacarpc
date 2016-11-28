@@ -1,6 +1,7 @@
 package org.easyarch.alpacarpc.serializer.component;
 
 import org.easyarch.alpacarpc.common.annotation.RPCEntity;
+import org.easyarch.alpacarpc.common.pool.ClassPool;
 
 import java.io.File;
 import java.net.URL;
@@ -33,10 +34,12 @@ public class ClassScanner {
         Matcher matcher = null;
         try {
             File file = new File(jarpath);
-            if (!file.isDirectory()){
-                return clazzs;
+            File[] files = null;
+            if (!file.isDirectory()&&file.getName().endsWith(".jar")){
+                files = new File[]{file};
+            }else{
+                files = file.listFiles(pathname -> pathname.getName().endsWith(".jar"));
             }
-            File[] files = file.listFiles(pathname -> pathname.getName().endsWith(".jar"));
             for (File f : files){
                 JarFile jarFile = new JarFile(f.getAbsoluteFile());
                 Enumeration<JarEntry> entrys = jarFile.entries();
@@ -71,6 +74,7 @@ public class ClassScanner {
 
 
     public static void main(String[] args) {
-
+        ClassPool.transportClasses.addAll(new ClassScanner().scanByJar("/opt"));
+        ClassPool.transportClasses.forEach(aClass -> System.out.println(aClass.getName()));
     }
 }

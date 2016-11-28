@@ -1,7 +1,7 @@
 package org.easyarch.alpacarpc.serializer.dp;
 
-import org.easyarch.alpacarpc.serializer.component.annotation.Transient;
-import org.easyarch.alpacarpc.serializer.component.bean.Person;
+import org.easyarch.alpacarpc.common.annotation.Transient;
+import org.easyarch.alpacarpc.common.bean.Person;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
