@@ -1,4 +1,4 @@
-package org.easyarch.alpaca.transport.util;/**
+package org.easyarch.alpaca.common.util;/**
  * Description : 
  * Created by YangZH on 16-5-29
  *  下午5:50
