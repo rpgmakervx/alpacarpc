@@ -42,6 +42,14 @@ public class OriginSerializer<T> extends BaseSerializer<T> {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        }finally {
+            if (bais != null){
+                try {
+                    bais.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }
