@@ -1,9 +1,8 @@
-package org.easyarch.alpaca.serializer.dp.hessian;
+package org.easyarch.alpaca.serializer.dp;
 
 import com.caucho.hessian.io.Hessian2Input;
 import com.caucho.hessian.io.Hessian2Output;
 import org.apache.commons.lang3.ArrayUtils;
-import org.easyarch.alpaca.serializer.dp.BaseSerializer;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

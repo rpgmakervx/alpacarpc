@@ -1,6 +1,4 @@
-package org.easyarch.alpaca.serializer.dp.origin;
-
-import org.easyarch.alpaca.serializer.dp.BaseSerializer;
+package org.easyarch.alpaca.serializer.dp;
 
 import java.io.*;
 

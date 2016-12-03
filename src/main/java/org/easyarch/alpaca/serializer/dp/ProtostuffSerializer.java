@@ -1,4 +1,4 @@
-package org.easyarch.alpaca.serializer.dp.protobuf;
+package org.easyarch.alpaca.serializer.dp;
 
 import com.dyuproject.protostuff.LinkedBuffer;
 import com.dyuproject.protostuff.ProtobufIOUtil;
@@ -10,15 +10,14 @@ import org.easyarch.alpaca.serializer.component.annotation.Member;
 import org.easyarch.alpaca.serializer.component.annotation.NotMember;
 import org.easyarch.alpaca.serializer.component.bean.Person;
 import org.easyarch.alpaca.serializer.component.bean.User;
-import org.easyarch.alpaca.serializer.dp.BaseSerializer;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.easyarch.alpaca.serializer.dp.protobuf.SchemaPool.cachedSchema;
-import static org.easyarch.alpaca.serializer.dp.protobuf.SchemaPool.fieldExclusion;
+import static org.easyarch.alpaca.serializer.dp.ClassPool.cachedSchema;
+import static org.easyarch.alpaca.serializer.dp.ClassPool.fieldExclusion;
 
 /**
  * Description :

@@ -1,4 +1,4 @@
-package org.easyarch.alpaca.serializer.dp.json;/**
+package org.easyarch.alpaca.transport.util;/**
  * Description : 
  * Created by YangZH on 16-5-29
  *  下午5:50
