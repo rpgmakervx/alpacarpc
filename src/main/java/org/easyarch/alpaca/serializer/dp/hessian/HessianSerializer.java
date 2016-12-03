@@ -1,7 +1,7 @@
 package org.easyarch.alpaca.serializer.dp.hessian;
 
-import com.caucho.hessian.io.HessianInput;
-import com.caucho.hessian.io.HessianOutput;
+import com.caucho.hessian.io.Hessian2Input;
+import com.caucho.hessian.io.Hessian2Output;
 import org.apache.commons.lang3.ArrayUtils;
 import org.easyarch.alpaca.serializer.dp.BaseSerializer;
 
@@ -21,11 +21,22 @@ public class HessianSerializer<T> extends BaseSerializer<T> {
             return null;
         }
         ByteArrayOutputStream os = new ByteArrayOutputStream();
-        HessianOutput ho = new HessianOutput(os);
+        Hessian2Output ho = new Hessian2Output(os);
         try {
+            ho.startMessage();
             ho.writeObject(bean);
+            ho.completeMessage();
+            ho.flush();
         } catch (IOException e) {
             e.printStackTrace();
+        }finally {
+            try {
+                if (os != null){
+                    os.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return os.toByteArray();
     }
@@ -35,12 +46,24 @@ public class HessianSerializer<T> extends BaseSerializer<T> {
             return null;
         }
         ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
-        HessianInput hi = new HessianInput(bais);
+        Hessian2Input hi = new Hessian2Input(bais);
+
+        Object bean = null;
         try {
-            return (T) hi.readObject();
+            hi.startMessage();
+            bean = hi.readObject();
+            hi.completeMessage();
         } catch (IOException e) {
             e.printStackTrace();
-            return null;
+        }finally {
+            try {
+                if (bais != null){
+                    bais.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+        return (T) bean;
     }
 }
