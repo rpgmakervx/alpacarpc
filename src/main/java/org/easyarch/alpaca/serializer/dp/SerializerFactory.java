@@ -7,4 +7,9 @@ package org.easyarch.alpaca.serializer.dp;
  */
 
 public class SerializerFactory {
+
+    public void createSerializer(){
+
+    }
+
 }
