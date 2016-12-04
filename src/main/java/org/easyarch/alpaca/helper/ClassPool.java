@@ -1,4 +1,4 @@
-package org.easyarch.alpaca.serializer.dp;
+package org.easyarch.alpaca.helper;
 
 import com.dyuproject.protostuff.Schema;
 
@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * 上午1:58
  */
 
-class ClassPool {
+public class ClassPool {
     public static Map<Class<?>, Schema<?>> cachedSchema = new ConcurrentHashMap<Class<?>, Schema<?>>();
     public static Map<Class<?>, Set<String>> fieldExclusion = new ConcurrentHashMap<Class<?>, Set<String>>();
 

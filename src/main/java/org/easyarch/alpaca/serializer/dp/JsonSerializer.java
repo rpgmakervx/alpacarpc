@@ -7,7 +7,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import java.nio.charset.Charset;
 import java.util.Set;
 
-import static org.easyarch.alpaca.serializer.dp.ClassPool.fieldExclusion;
+import static org.easyarch.alpaca.helper.ClassPool.fieldExclusion;
 
 /**
  * Description :

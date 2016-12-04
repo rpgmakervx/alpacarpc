@@ -16,8 +16,8 @@ import java.lang.reflect.Field;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.easyarch.alpaca.serializer.dp.ClassPool.cachedSchema;
-import static org.easyarch.alpaca.serializer.dp.ClassPool.fieldExclusion;
+import static org.easyarch.alpaca.helper.ClassPool.cachedSchema;
+import static org.easyarch.alpaca.helper.ClassPool.fieldExclusion;
 
 /**
  * Description :
