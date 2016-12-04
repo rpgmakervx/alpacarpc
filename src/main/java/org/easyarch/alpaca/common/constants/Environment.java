@@ -7,10 +7,21 @@ package org.easyarch.alpaca.common.constants;
  */
 
 public enum Environment {
-    ONLINE("online"),OFFLINE("offline");
+    TEST("test",Const.TEST_RESOURCE+"alpacarpc.xml"),DEPLOY("deploy",Const.DEPLOY_RESOURCE+"alpacarpc.xml");
     public String env;
-
-    Environment(String env){
+    public String confPath;
+    Environment(String env,String confPath){
         this.env = env;
+        this.confPath = confPath;
+    }
+
+
+    public static String getConfPath(String env) {
+        for (Environment envroment:Environment.values()){
+            if (env.equalsIgnoreCase(envroment.env)){
+                return envroment.confPath;
+            }
+        }
+        return DEPLOY.confPath;
     }
 }
