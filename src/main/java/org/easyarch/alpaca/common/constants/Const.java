@@ -22,6 +22,4 @@ public class Const {
             File.separator +
             "environment.properties";
 
-    public static final String ENVIRONMENT = "alpaca.environment";
-    public static final String PROTOCOL_KEY = "alpaca.rpc.protocol";
 }
