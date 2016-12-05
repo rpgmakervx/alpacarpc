@@ -1,7 +1,6 @@
 package org.easyarch.alpaca.serializer.dp;
 
-import org.easyarch.alpaca.serializer.component.annotation.Member;
-import org.easyarch.alpaca.serializer.component.annotation.NotMember;
+import org.easyarch.alpaca.serializer.component.annotation.Transient;
 import org.easyarch.alpaca.serializer.component.bean.Person;
 
 import java.lang.annotation.Annotation;
@@ -28,9 +27,8 @@ public class SerializerFactory {
         Set<String> exclutions = new HashSet<String>();
         Set<String> inclusions = new HashSet<String>();
         for (Field f : fields) {
-            Annotation member = f.getAnnotation(Member.class);
-            Annotation notMember = f.getAnnotation(NotMember.class);
-            if (member == null || notMember != null) {
+            Annotation transients = f.getAnnotation(Transient.class);
+            if (transients != null) {
                 exclutions.add(f.getName());
             }else{
                 inclusions.add(f.getName());
