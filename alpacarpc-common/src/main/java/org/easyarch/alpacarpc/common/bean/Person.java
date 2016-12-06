@@ -1,5 +1,8 @@
 package org.easyarch.alpacarpc.common.bean;
 
+import org.easyarch.alpacarpc.common.annotation.RPCEntity;
+import org.easyarch.alpacarpc.common.annotation.Transient;
+
 import java.io.Serializable;
 
 /**
@@ -7,12 +10,13 @@ import java.io.Serializable;
  * Created by xingtianyu on 16-12-3
  * 上午1:37
  */
+@RPCEntity
 public class Person implements Serializable{
 
     private String id;
 
     private String username;
-
+    @Transient
     private String password;
 
     public String getId() {
