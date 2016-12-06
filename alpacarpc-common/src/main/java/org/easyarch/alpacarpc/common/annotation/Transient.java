@@ -1,4 +1,4 @@
-package org.easyarch.alpacarpc.serializer.component.annotation;/**
+package org.easyarch.alpacarpc.common.annotation;/**
  * Description :
  * Created by YangZH on 16-11-27
  * 下午12:50
