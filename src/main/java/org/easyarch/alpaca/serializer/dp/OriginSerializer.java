@@ -1,53 +1,30 @@
 package org.easyarch.alpaca.serializer.dp;
 
-import java.io.*;
+import java.util.Set;
+
+import static org.easyarch.alpaca.serializer.component.ClassPool.includedFields;
 
 /**
  * Description :
- * Created by xingtianyu on 16-12-2
- * 上午2:39
+ * Created by xingtianyu on 16-12-6
+ * 下午6:37
  */
 
-public class OriginSerializer<T> extends BaseSerializer<T> {
+abstract public class OriginSerializer<T> implements Serializer<T> {
 
-    public byte[] serialize(T bean) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ObjectOutputStream oos = null;
+    protected T excludeFileds(T bean){
+        Set<String> fieldNames = includedFields.get(bean.getClass());
+        T newBean = null;
         try {
-            oos = new ObjectOutputStream(baos);
-            oos.writeObject(bean);
-            oos.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }finally {
-            if (baos != null){
-                try {
-                    baos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            Class<T> cls = (Class<T>) bean.getClass();
+            newBean = (T) bean.getClass().newInstance();
+            for (String fieldName : fieldNames){
+                Object oldVal = cls.getField(fieldName).get(bean);
+                cls.getDeclaredField(fieldName).set(newBean,oldVal);
             }
-        }
-        return baos.toByteArray();
-    }
-
-    public T deserialize(byte[] bytes, Class<T> cls) {
-        ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
-        try {
-            ObjectInputStream ois = new ObjectInputStream(bais);
-            return (T) ois.readObject();
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
-        }finally {
-            if (bais != null){
-                try {
-                    bais.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         }
+        return newBean;
     }
 }

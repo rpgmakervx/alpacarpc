@@ -1,5 +1,17 @@
 package org.easyarch.alpaca.serializer.dp;
 
+import org.easyarch.alpaca.serializer.component.annotation.Member;
+import org.easyarch.alpaca.serializer.component.annotation.NotMember;
+import org.easyarch.alpaca.serializer.component.bean.Person;
+
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
+import java.util.HashSet;
+import java.util.Set;
+
+import static org.easyarch.alpaca.serializer.component.ClassPool.excludedFields;
+import static org.easyarch.alpaca.serializer.component.ClassPool.includedFields;
+
 /**
  * Description :
  * Created by xingtianyu on 16-12-3
@@ -8,7 +20,27 @@ package org.easyarch.alpaca.serializer.dp;
 
 public class SerializerFactory {
 
-    public void createSerializer(){
+    static {
+        scan(Person.class);
+    }
+    private static void scan(Class<?> clazz) {
+        Field[] fields = clazz.getDeclaredFields();
+        Set<String> exclutions = new HashSet<String>();
+        Set<String> inclusions = new HashSet<String>();
+        for (Field f : fields) {
+            Annotation member = f.getAnnotation(Member.class);
+            Annotation notMember = f.getAnnotation(NotMember.class);
+            if (member == null || notMember != null) {
+                exclutions.add(f.getName());
+            }else{
+                inclusions.add(f.getName());
+            }
+        }
+        excludedFields.put(clazz,exclutions);
+        includedFields.put(clazz,inclusions);
+    }
+
+    public static void createSerializer(){
 
     }
 

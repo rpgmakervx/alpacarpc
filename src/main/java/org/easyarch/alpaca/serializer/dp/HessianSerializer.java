@@ -14,7 +14,7 @@ import java.io.IOException;
  * 下午8:48
  */
 
-public class HessianSerializer<T> extends BaseSerializer<T> {
+public class HessianSerializer<T> extends OriginSerializer<T> implements Serializer<T> {
     public byte[] serialize(T bean) {
         if (bean == null){
             return null;

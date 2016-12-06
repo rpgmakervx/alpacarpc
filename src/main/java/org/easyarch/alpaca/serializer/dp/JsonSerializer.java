@@ -7,7 +7,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import java.nio.charset.Charset;
 import java.util.Set;
 
-import static org.easyarch.alpaca.helper.ClassPool.fieldExclusion;
+import static org.easyarch.alpaca.serializer.component.ClassPool.excludedFields;
 
 /**
  * Description :
@@ -15,13 +15,13 @@ import static org.easyarch.alpaca.helper.ClassPool.fieldExclusion;
  * 上午9:44
  */
 
-public class JsonSerializer<T> extends BaseSerializer<T>{
+public class JsonSerializer<T> implements Serializer<T> {
 
     @Override
     public byte[] serialize(T bean) {
         if (bean == null)
             return null;
-        Set<String> exclusion = fieldExclusion.get(bean.getClass());
+        Set<String> exclusion = excludedFields.get(bean.getClass());
         PropertyFilter filter = new PropertyFilter() {
             @Override
             public boolean apply(Object object, String name, Object value) {
