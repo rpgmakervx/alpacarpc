@@ -1,0 +1,16 @@
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/component/FieldPool.java
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/component/ClassScanner.java
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/component/init/SerializerContext.java
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/component/annotation/Transient.java
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/component/annotation/RPCEntity.java
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/dp/ProtostuffSerializer.java
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/dp/SerializerFactory.java
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/component/bean/User.java
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/dp/HessianSerializer.java
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/dp/OriginSerializer.java
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/dp/Serializer.java
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/component/bean/UserProto.java
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/dp/JavaSerializer.java
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/dp/JsonSerializer.java
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/dp/type/SerializeType.java
+/home/code4j/IDEAWorkspace/alpacarpc/alpacarpc-serializer/src/main/java/org/easyarch/alpaca/serializer/component/bean/Person.java

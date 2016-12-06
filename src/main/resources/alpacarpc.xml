@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rpc>
-    <!--java,json,hessian,protobuf,custome-->
-    <proterty>
-        <name>alpaca.rpc.protocol</name>
-        <value>protobuf</value>
-    </proterty>
-</rpc>
