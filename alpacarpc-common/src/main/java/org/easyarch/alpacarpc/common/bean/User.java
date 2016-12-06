@@ -1,10 +1,10 @@
-package org.easyarch.alpacarpc.serializer.component.bean;
+package org.easyarch.alpacarpc.common.bean;
 
-import org.easyarch.alpacarpc.serializer.component.annotation.RPCEntity;
+
+import org.easyarch.alpacarpc.common.annotation.RPCEntity;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;
-
 /**
  * Description :
  * Created by xingtianyu on 16-11-27
