@@ -51,6 +51,14 @@ public class Configuration {
         }
     }
 
+    public static Map<String,String> getProperties(){
+        return properties;
+    }
+
+    public static String getProperty(String name){
+        return properties.get(name);
+    }
+
     public static void main(String[] args) {
 //        System.out.println(System.getProperty("user.dir"));
 //        System.out.println(Configuration.class.getResource("").getPath()+ File.separator+"environment.properties");
