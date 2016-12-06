@@ -1,6 +1,6 @@
 package org.easyarch.alpacarpc.serializer.component;
 
-import org.easyarch.alpacarpc.serializer.component.annotation.RPCEntity;
+import org.easyarch.alpacarpc.common.annotation.RPCEntity;
 
 import java.io.File;
 import java.net.URL;
