@@ -7,13 +7,14 @@ package org.easyarch.alpaca.serializer.dp.type;
  */
 
 public enum SerializeType {
-    JAVA(0),JSON(1),HESSIAN(2),PROTOBUF(3);
-    private int code;
+    JAVA("java"),JSON("json"),HESSIAN("hessian"),PROTOBUF("protobuf");
+    private String type;
 
-    SerializeType(int code) {
-        this.code = code;
+    SerializeType(String type) {
+        this.type = type;
     }
-    public int getCode(){
-        return code;
+
+    public String getType() {
+        return type;
     }
 }
